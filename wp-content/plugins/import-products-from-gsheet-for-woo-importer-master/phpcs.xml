@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<ruleset name="AIOSEOP">
+	<description>Plugin dev PHP_CodeSniffer ruleset.</description>
+
+	<file>.</file>
+	<rule ref="WordPress" />
+
+	<!-- Exclude paths -->
+	<exclude-pattern>lib</exclude-pattern>
+	<exclude-pattern>vendor</exclude-pattern>
+	<exclude-pattern>languages</exclude-pattern>
+	<exclude-pattern>src/WoocommerceImporter</exclude-pattern>
+
+	<!-- We allow using fopen and flose instead -->
+	<rule ref="WordPress">
+		<exclude name="WordPress.WP.AlternativeFunctions.file_system_read_fopen"/>
+	</rule>
+	<rule ref="WordPress">
+		<exclude name="WordPress.WP.AlternativeFunctions.file_system_read_fclose"/>
+	</rule>
+	<!-- Exclude due to PSR-4 autoload intagration -->
+	<rule ref="WordPress">
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+	</rule>
+	<!-- Exclude due to PSR-4 autoload intagration -->
+	<rule ref="WordPress">
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+	</rule>
+	<!-- We do not comment params in functions doc block of our project -->
+	<rule ref="WordPress">
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>
+	</rule>
+	<!-- We do not comment trows in functions doc block of our project -->
+	<rule ref="WordPress">
+		<exclude name="Squiz.Commenting.FunctionComment.EmptyThrows"/>
+	</rule>
+	<!-- We allow to use php standard file interaction functions -->
+	<rule ref="WordPress">
+		<exclude name="WordPress.WP.AlternativeFunctions.file_system_read_file_put_contents"/>
+	</rule>
+
+	<!-- Single line rule configuration -->
+	<rule ref="WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_putenv">
+		<exclude-pattern>src/Services/GoogleApiTokenAssertionMethodService.php</exclude-pattern>
+	</rule>
+	<!-- Nonce settings tab -->
+	<rule ref="WordPress.Security.NonceVerification.Recommended">
+		<exclude-pattern>src/Models/AdminSettingsModel.php</exclude-pattern>
+	</rule>
+	<!-- Nonce settings tab -->
+	<rule ref="WordPress.Security.NonceVerification.Recommended">
+		<exclude-pattern>includes/helpers.php</exclude-pattern>
+	</rule>
+
+
+</ruleset>

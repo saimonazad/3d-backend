@@ -1,0 +1,26 @@
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
+    background-color: #1f4661;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, #adminmenu .wp-has-current-submenu.opensub .wp-submenu, #adminmenu a.wp-has-current-submenu:focus+.wp-submenu, .no-js li.wp-has-current-submenu:hover .wp-submenu{
+background-color: #1a4c70;
+
+}
+
+#wpadminbar{
+    background: #2f5b78;
+}
+
+#wpadminbar #wp-admin-bar-wp-logo>.ab-item {
+    padding: 0 7px;
+    background-image: url('https://bestinbd.com/projects/web/2103SLE/dev/wp-content/themes/twentytwentyone/assets/logo.svg') !important;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    margin-left: 13px;
+}
+#wpadminbar #wp-admin-bar-wp-logo>.ab-item .ab-icon:before {
+    content: " ";
+    top: 2px;
+}

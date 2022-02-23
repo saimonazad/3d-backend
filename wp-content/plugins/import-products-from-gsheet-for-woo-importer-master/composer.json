@@ -1,0 +1,33 @@
+{
+	"require": {
+		"google/apiclient": "2.7.2",
+		"guzzlehttp/guzzle": "6.5.0"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "3.*",
+		"dealerdirect/phpcodesniffer-composer-installer": "*",
+		"wp-coding-standards/wpcs": "*"
+	},
+	"autoload": {
+		"psr-4": {"GSWOO\\": "src/"}
+	},
+	"scripts": {
+		"pre-command-run": [
+			"cp config/hooks/pre-commit .git/hooks/pre-commit",
+			"chmod +x .git/hooks/pre-commit"
+		],
+		"post-update-cmd": "Google\\Task\\Composer::cleanup"
+	},
+	"extra": {
+		"google/apiclient-services": [
+			"Drive",
+			"Sheets",
+			"Oauth2"
+		]
+	},
+	"config": {
+		"platform": {
+			"php": "5.6.1"
+		}
+	}
+}
